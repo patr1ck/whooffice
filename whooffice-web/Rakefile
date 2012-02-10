@@ -1,0 +1,2 @@
+require './whooffice'
+require 'sinatra/activerecord/rake'

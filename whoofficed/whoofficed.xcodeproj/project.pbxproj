@@ -1,0 +1,244 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDC759EE14E4BA27009F5791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC759ED14E4BA27009F5791 /* Foundation.framework */; };
+		CDC759F114E4BA27009F5791 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC759F014E4BA27009F5791 /* main.m */; };
+		CDC759F514E4BA27009F5791 /* whoofficed.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CDC759F414E4BA27009F5791 /* whoofficed.1 */; };
+		CDC759FD14E4BADA009F5791 /* MDNSTimedProbe.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC759FC14E4BADA009F5791 /* MDNSTimedProbe.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDC759E714E4BA27009F5791 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				CDC759F514E4BA27009F5791 /* whoofficed.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CDC759E914E4BA27009F5791 /* whoofficed */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = whoofficed; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDC759ED14E4BA27009F5791 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CDC759F014E4BA27009F5791 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDC759F314E4BA27009F5791 /* whoofficed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "whoofficed-Prefix.pch"; sourceTree = "<group>"; };
+		CDC759F414E4BA27009F5791 /* whoofficed.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = whoofficed.1; sourceTree = "<group>"; };
+		CDC759FB14E4BADA009F5791 /* MDNSTimedProbe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSTimedProbe.h; sourceTree = "<group>"; };
+		CDC759FC14E4BADA009F5791 /* MDNSTimedProbe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSTimedProbe.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDC759E614E4BA27009F5791 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC759EE14E4BA27009F5791 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDC759DE14E4BA27009F5791 = {
+			isa = PBXGroup;
+			children = (
+				CDC759EF14E4BA27009F5791 /* whoofficed */,
+				CDC759EC14E4BA27009F5791 /* Frameworks */,
+				CDC759EA14E4BA27009F5791 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDC759EA14E4BA27009F5791 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDC759E914E4BA27009F5791 /* whoofficed */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDC759EC14E4BA27009F5791 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDC759ED14E4BA27009F5791 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDC759EF14E4BA27009F5791 /* whoofficed */ = {
+			isa = PBXGroup;
+			children = (
+				CDC759FB14E4BADA009F5791 /* MDNSTimedProbe.h */,
+				CDC759FC14E4BADA009F5791 /* MDNSTimedProbe.m */,
+				CDC759F014E4BA27009F5791 /* main.m */,
+				CDC759F414E4BA27009F5791 /* whoofficed.1 */,
+				CDC759F214E4BA27009F5791 /* Supporting Files */,
+			);
+			path = whoofficed;
+			sourceTree = "<group>";
+		};
+		CDC759F214E4BA27009F5791 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDC759F314E4BA27009F5791 /* whoofficed-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CDC759E814E4BA27009F5791 /* whoofficed */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDC759F814E4BA27009F5791 /* Build configuration list for PBXNativeTarget "whoofficed" */;
+			buildPhases = (
+				CDC759E514E4BA27009F5791 /* Sources */,
+				CDC759E614E4BA27009F5791 /* Frameworks */,
+				CDC759E714E4BA27009F5791 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = whoofficed;
+			productName = whoofficed;
+			productReference = CDC759E914E4BA27009F5791 /* whoofficed */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDC759E014E4BA27009F5791 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Sleepyhead Inc";
+			};
+			buildConfigurationList = CDC759E314E4BA27009F5791 /* Build configuration list for PBXProject "whoofficed" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CDC759DE14E4BA27009F5791;
+			productRefGroup = CDC759EA14E4BA27009F5791 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDC759E814E4BA27009F5791 /* whoofficed */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDC759E514E4BA27009F5791 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC759F114E4BA27009F5791 /* main.m in Sources */,
+				CDC759FD14E4BADA009F5791 /* MDNSTimedProbe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CDC759F614E4BA27009F5791 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CDC759F714E4BA27009F5791 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CDC759F914E4BA27009F5791 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "whoofficed/whoofficed-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDC759FA14E4BA27009F5791 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "whoofficed/whoofficed-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDC759E314E4BA27009F5791 /* Build configuration list for PBXProject "whoofficed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC759F614E4BA27009F5791 /* Debug */,
+				CDC759F714E4BA27009F5791 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDC759F814E4BA27009F5791 /* Build configuration list for PBXNativeTarget "whoofficed" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDC759F914E4BA27009F5791 /* Debug */,
+				CDC759FA14E4BA27009F5791 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDC759E014E4BA27009F5791 /* Project object */;
+}

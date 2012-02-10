@@ -1,0 +1,9 @@
+source 'http://rubygems.org'
+gem 'sinatra'
+gem 'json'
+gem 'activerecord'
+gem 'sqlite3'
+gem 'postgres'
+
+source 'http://gemcutter.org'
+gem 'sinatra-activerecord'
