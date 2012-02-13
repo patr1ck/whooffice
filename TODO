@@ -1,9 +1,7 @@
 TODO
 
 * Finish the Hubot script. Need to learn coffeescript first.
-* Add some API:
-	* Need a POST API to associate employees to devices. Should be pretty simple.
-	* Need a GET API to get the last time someone was in the office.
+* whooffice-web API: /in_office.json should return a list of users, that's it.
 * whoofficed needs a launchd plist and instructions on how to install it.
 * whoofficed should take an interval time and a server name as launch arguments, for configurability.
 * whoofficed needs to be cleaned up so that the POST is done in a sane way and errors are checked.
