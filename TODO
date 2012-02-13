@@ -1,5 +1,4 @@
 TODO
 
 * Finish the Hubot script. Need to learn coffeescript first.
-* whooffice-web API: /in_office.json should return a list of users, that's it.
 * whoofficed needs a launchd plist and instructions on how to install it.

@@ -21,16 +21,6 @@ class OfficeStatus < ActiveRecord::Base
 end
 
 #
-# GET /in_office.json
-# Returns the names of employees currently in the office
-# 
-
-get '/in_office.json' do
-  os = OfficeStatus.find(:all, :order => "id desc", :limit => 1, :include => [:devices] )  
-  os.to_json(:include => :devices)
-end
-
-#
 # GET /last_seen/:employee_name.json
 # Returns the last datetime where the employee_name was in the office
 # 
@@ -49,6 +39,23 @@ get '/last_seen/:employee_name.json' do
   
   sorted_devices = devices_in_offices.sort_by &:created_at
   return {"last_seen" => sorted_devices[0].created_at}.to_json
+end
+
+
+#
+# GET /in_office.json
+# Returns the names of employees currently in the office
+# 
+
+get '/in_office.json' do
+  os = OfficeStatus.find(:all, :order => "id desc", :limit => 1, :include => [:devices])
+  unless os then return 404 end
+  
+  employees = []
+  os.first.devices.each do |device|
+    employees << device.employee
+  end
+  {"in_office" => employees, "time" => os.first.created_at}.to_json
 end
 
 #
