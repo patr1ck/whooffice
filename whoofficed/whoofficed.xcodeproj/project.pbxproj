@@ -34,6 +34,7 @@
 		CDC759F414E4BA27009F5791 /* whoofficed.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = whoofficed.1; sourceTree = "<group>"; };
 		CDC759FB14E4BADA009F5791 /* MDNSTimedProbe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDNSTimedProbe.h; sourceTree = "<group>"; };
 		CDC759FC14E4BADA009F5791 /* MDNSTimedProbe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDNSTimedProbe.m; sourceTree = "<group>"; };
+		CDD5F3FE14E8F63500289E5A /* org.fadeover.whoofficed.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = org.fadeover.whoofficed.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +79,7 @@
 			children = (
 				CDC759FB14E4BADA009F5791 /* MDNSTimedProbe.h */,
 				CDC759FC14E4BADA009F5791 /* MDNSTimedProbe.m */,
+				CDD5F3FE14E8F63500289E5A /* org.fadeover.whoofficed.plist */,
 				CDC759F014E4BA27009F5791 /* main.m */,
 				CDC759F414E4BA27009F5791 /* whoofficed.1 */,
 				CDC759F214E4BA27009F5791 /* Supporting Files */,

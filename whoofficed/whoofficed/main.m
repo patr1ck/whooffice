@@ -12,8 +12,19 @@
 int main(int argc, const char * argv[])
 {
     @autoreleasepool {
-        MDNSTimedProbe *probe = [[MDNSTimedProbe alloc] init];
+        NSArray *arguments = [[NSProcessInfo processInfo] arguments];
+        
+        if ([arguments count] < 3) {
+            NSLog(@"Invalid number of arguments passed.\nUSAGE: whoofficed <timer interval> <server url>");
+            return 1;
+        }
+        
+        int interval = [[arguments objectAtIndex:1] intValue];
+        NSString *server = [arguments objectAtIndex:2];
+        
+        MDNSTimedProbe *probe = [[MDNSTimedProbe alloc] initWithInterval:interval andServer:server];
         [probe start];
+        
         [[NSRunLoop currentRunLoop] run];
     }
     

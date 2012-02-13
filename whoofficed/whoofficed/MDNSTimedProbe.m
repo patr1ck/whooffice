@@ -7,14 +7,14 @@
 
 #import "MDNSTimedProbe.h"
 
-#define kTimerInterval 60 * 2
-
 @interface MDNSTimedProbe ()
 @property (nonatomic, strong) NSNetServiceBrowser *_netServiceBrowser;
 @property (nonatomic, strong) NSMutableArray *_deviceNames;
 @property (nonatomic, strong) NSArray *_serviceTypesToSearch;
 @property (nonatomic, assign) int _searchIndex;
 @property (nonatomic, strong) NSTimer *_searchTimer;
+@property (nonatomic, assign) int _timerInterval;
+@property (nonatomic, strong) NSString *_server;
 @end
 
 
@@ -25,10 +25,12 @@
 @synthesize _serviceTypesToSearch;
 @synthesize _searchIndex;
 @synthesize _searchTimer;
+@synthesize _timerInterval;
+@synthesize _server;
 
 #pragma mark Public methods
 
-- (id)init
+- (id)initWithInterval:(int)interval andServer:(NSString *)server;
 {
     self = [super init];
     if (self) {
@@ -36,18 +38,52 @@
         self._serviceTypesToSearch = [NSArray arrayWithObjects:@"_daap._tcp.", @"_ssh._tcp.", @"_apple-mobdev._tcp.", nil];
         self._searchIndex = 0;
         self._searchTimer = nil;
+        self._timerInterval = interval;
+        self._server = server;
     }
     return self;
 }
 
 - (void)start;
 {
-    [NSTimer scheduledTimerWithTimeInterval:kTimerInterval
+    [NSTimer scheduledTimerWithTimeInterval:_timerInterval
                                      target:self 
                                    selector:@selector(beginDeviceSearch:) 
                                    userInfo:nil 
                                     repeats:YES];
     [self beginDeviceSearch:nil];
+}
+
+- (void)submitData;
+{
+    NSDictionary *jsonDict = [NSDictionary dictionaryWithObject:_deviceNames forKey:@"device_names"];
+    
+    NSLog(@"Dictionary: %@", jsonDict);
+    
+    NSError *jsonError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict 
+                                                       options:0
+                                                         error:&jsonError];
+    
+    if (!jsonData && jsonError) {
+        NSLog(@"ERROR: Couldn't encode JSON: %@", [jsonError localizedDescription]);
+    }
+    
+    
+    NSString *apiEndpoint = [NSString stringWithFormat:@"%@/in_office.json", _server];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:apiEndpoint]];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:jsonData];
+    
+    NSError *connectionError = nil;
+    NSURLResponse *response = nil;
+    [NSURLConnection sendSynchronousRequest:request
+                          returningResponse:&response
+                                      error:&connectionError];
+
+    if (connectionError) {
+        NSLog(@"ERROR: Couldn't connect to submit data: %@", [connectionError localizedDescription]);
+    }
 }
 
 - (void)beginDeviceSearch:(id)sender;
@@ -61,25 +97,7 @@
     // Check to see if there are services left to search
     if (_searchIndex >= [_serviceTypesToSearch count]) {
         NSLog(@"Done searching all services. Found devices: %@", _deviceNames);
-        NSDictionary *jsonDict = [NSDictionary dictionaryWithObject:_deviceNames forKey:@"names"];
-        
-        NSLog(@"Dictionary: %@", jsonDict);
-        
-        NSError *error = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonDict 
-                                                           options:0
-                                                             error:&error];
-        
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://localhost:9292/in_office.json"]];
-        [request setHTTPMethod:@"POST"];
-        [request setHTTPBody:jsonData];
-        
-        NSError *connectionError = nil;
-        NSURLResponse *response = nil;
-        [NSURLConnection sendSynchronousRequest:request
-                              returningResponse:&response
-                                          error:&connectionError];
-        
+        [self submitData];
         return;
     }
     

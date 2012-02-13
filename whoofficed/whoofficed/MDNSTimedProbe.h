@@ -9,6 +9,7 @@
 
 @interface MDNSTimedProbe : NSObject <NSNetServiceBrowserDelegate>
 
+- (id)initWithInterval:(int)interval andServer:(NSString *)server;
 - (void)start;
 
 @end

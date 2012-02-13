@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>label</key>
+        <string>org.fadeover.whoofficed</string>
+        <key>ProgramArguments</key>
+        <array>
+                <string>/usr/bin/whoofficed</string>
+				<string>180</string>
+				<string>http://localhost:9292</string>
+        </array>
+        <key>OnDemand</key>
+        <false/>
+        <key>StandardErrorPath</key>
+        <string>/var/log/whoofficed.log</string>
+        <key>StandardOutPath</key>
+        <string>/var/log/whoofficed.log</string>
+</dict>
+</plist>
