@@ -51,11 +51,11 @@ get '/in_office.json' do
   os = OfficeStatus.find(:all, :order => "id desc", :limit => 1, :include => [:devices])
   unless os then return 404 end
   
-  employees = []
+  employee_names = []
   os.first.devices.each do |device|
-    employees << device.employee
+    employee_names << device.employee.name
   end
-  {"in_office" => employees, "time" => os.first.created_at}.to_json
+  {"in_office" => employee_names, "time" => os.first.created_at}.to_json
 end
 
 #
