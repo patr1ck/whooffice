@@ -53,7 +53,7 @@ get '/in_office.json' do
   
   employee_names = []
   os.first.devices.each do |device|
-    employee_names << device.employee.name
+    employee_names << device.employee.name if device.employee
   end
   {"in_office" => employee_names, "time" => os.first.created_at}.to_json
 end
