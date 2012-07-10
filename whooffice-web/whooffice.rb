@@ -71,7 +71,7 @@ post '/in_office.json' do
   devices_in_office = []
   status = OfficeStatus.new
   status.save
-  devicesList["names"].each do |device_name|
+  devicesList["device_names"].each do |device_name|
     device = Device.find_or_create_by_name(device_name)
     device.save
     device_in_office = DeviceInOffice.new(:device => device, :office_status => status)
